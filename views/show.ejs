@@ -1,0 +1,75 @@
+<%- include("partials/header") %> <% movieDb = { "Internet Movie Database" :
+"https://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png",
+"Rotten Tomatoes":
+"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Rotten_Tomatoes_logo.svg/1200px-Rotten_Tomatoes_logo.svg.png",
+"Metacritic":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Metacritic.svg/1024px-Metacritic.svg.png"}
+%>
+<style>
+  .row {
+    margin-top: 25px;
+  }
+</style>
+<a href="javascript:history.back()" class="btn btn-secondary ml-auto"
+  >Go back</a
+>
+<div class="container-fluid" style="margin-top: 6rem; margin-bottom: 3rem;">
+  <div class="row justify-content-center">
+    <div class="display-1 text-center">
+      <span id="head-text"><%= data.Title %></span>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-0">
+    <span class="lead">(<%= data.Year %>)</span>
+  </div>
+  <div class="row justify-content-center text-muted movieContent">
+    <span><%= data.Rated %></span>|<span><%= data.Runtime %></span>|<span
+      ><%= data.Genre %></span
+    >|<span><%= data.Released %></span>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <img src="<%= data.Poster %>" alt="<%= data.Title %>" />
+  </div>
+  <div class="container">
+    <div class="row justify-content-around align-items-center">
+      <% data.Ratings.forEach(function(rating){ %>
+      <div class="col-sm-4 my-2">
+        <div
+          class="blockquote m-0"
+          style="display:flex; width:275px; height: 52px;"
+        >
+          <img
+            class="movieDbImg mr-4"
+            src="<%= movieDb[rating.Source] %>"
+            alt="<%= rating.Source %>"
+          />
+          <p class="mr-2"><i class="fas fa-star"></i></p>
+          <p><%= rating.Value %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <p class="blockquote">&emsp;<%= data.Plot %></p>
+    </div>
+    <div class="row">
+      <div class="ml-0">
+        <p><strong>Director:</strong> <%= data.Director %></p>
+        <p><strong>Writers:</strong> <%= data.Writer %></p>
+        <p><strong>Actors:</strong> <%= data.Actors %></p>
+      </div>
+    </div>
+    <div class="row">
+      <p><strong>Awards:</strong> <%= data.Awards %></p>
+    </div>
+    <div class="row">
+      <p><strong>Country:</strong> <%= data.Country %></p>
+    </div>
+    <div class="row">
+      <p><strong>Language:</strong> <%= data.Language %></p>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

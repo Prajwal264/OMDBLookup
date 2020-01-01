@@ -67,3 +67,12 @@ body {
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
   color: black;
 }
+
+.movieContent > span {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.movieDbImg {
+  width: 87px;
+}
