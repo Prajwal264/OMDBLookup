@@ -1,0 +1,40 @@
+<%- include("partials/header") %>
+<!-- container -->
+<div class="container-fluid" style="margin-top: 13rem;">
+  <div class="row justify-content-center">
+    <div class="display-1 text-center">
+      <span id="head-text">Movie Lookup</span>
+    </div>
+  </div>
+  <div class="row pt-4 justify-content-center">
+    <!-- search bar -->
+    <div class="col-sm-8" style="padding-top: 2rem">
+      <form action="/results" method="GET">
+        <div
+          style="background-color: white;"
+          class="input-group mb-4 border rounded-pill p-1"
+        >
+          <input
+            type="search"
+            placeholder="Enter movie title here"
+            id="searchBar"
+            name="movie"
+            aria-describedby="button-addon3"
+            class="form-control bg-none border-0"
+          />
+          <div class="input-group-append border-0">
+            <button
+              id="button-addon3"
+              type="button"
+              class="btn btn-link text-success"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

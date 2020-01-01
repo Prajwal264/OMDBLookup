@@ -1,0 +1,16 @@
+{
+  "name": "movie-lookup",
+  "version": "1.0.0",
+  "description": "This is a movie lookup web application that makes good use of the OMDB API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prajwal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  }
+}
